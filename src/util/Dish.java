@@ -1,4 +1,4 @@
-package streams;
+package util;
 
 public class Dish {
 	private final String name;

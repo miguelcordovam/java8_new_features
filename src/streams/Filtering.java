@@ -5,7 +5,8 @@ import static java.util.stream.Collectors.toList;
 import java.util.Arrays;
 import java.util.List;
 
-import streams.Dish.Type;
+import util.Dish;
+import util.Dish.Type;
 
 public class Filtering {
 

@@ -1,11 +1,15 @@
-package streams;
+package grouping;
 
 import util.Dish;
 
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.partitioningBy;
+
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
-public class Matching {
+public class Partitioning {
 
     public static void main(String[] args) {
 
@@ -20,12 +24,17 @@ public class Matching {
                 new Dish("prawns", false, 300, Dish.Type.FISH),
                 new Dish("salmon", false, 450, Dish.Type.FISH));
 
-        boolean isHealthy = menu.stream().allMatch(d -> d.getCalories() < 1000);
-        boolean isHealthy2 = menu.stream().noneMatch(d -> d.getCalories() >= 1000);
+        Map<Boolean, List<Dish>> partitionedMenu = menu.stream()
+                .collect(partitioningBy(Dish::isVegetarian));
 
-        System.out.println(isHealthy);
-        System.out.println(isHealthy2);
+        System.out.println(partitionedMenu);
 
+        // partitioning with grouping
+
+        Map<Boolean, Map<Dish.Type, List<Dish>>> vegetarianDishesByType =
+                menu.stream().collect(partitioningBy(Dish::isVegetarian, groupingBy(Dish::getType)));
+
+        System.out.println(vegetarianDishesByType);
     }
 
 }
