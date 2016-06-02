@@ -1,0 +1,13 @@
+  When I was in college, I had a professor who stated that every programmer had a 'bag of tricks'
+solutions that we tend to use over and over again because in our own personal experience, they
+work.  He thought that his job was to 'put more tricks into our bags'.  What this professor was
+talking about were things like design patterns and idioms.
+  This paper is going to talk about a particluar 'trick' I like, one that is probably better classified as
+an 'idiom' than a design pattern (although it is a component in many different design patterns).  By
+being aware of this idiom and understanding how to apply it, I believe that your code will be better,
+less error prone, and more maintainable.  I'm talking about a technique for reducing the 'coupling'
+between objects in your code.  This technique is an easy concept identified by a fancy name:  the
+Law Of Demeter.
+  Lets start by considering a trivial hypothetical example of a 'Paperboy', who has to get a payment
+from a 'Customer'.  Lets define some code for a Customer, some mechanism for receiving
+payments from that customer, and a snippet of code that our paperboy will run
