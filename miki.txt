@@ -1,0 +1,13 @@
+test
+test2
+abc
+miki
+Software evolution is about understanding
+how our codebases grow. It turns out that codebases
+ evolve according to certain patterns. Some of them are good,
+  while some patterns indicate serious maintainability problems
+  . My approach is to analyze the history of our codebase. Once
+  we embrace the past, we get a lot of useful information. It’s
+  information that lets us uncover productivity bottlenecks, parts
+   that are hard to maintain, and even parts at risk for defects in
+    our codebases.
